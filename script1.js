@@ -6,7 +6,7 @@ $("#btn").click(function(e){
         $("#lista").append(`<li>
                             <i class="fas fa-check-circle check"></i>
                             <span>${ tarefa }</span>
-                            <i class="fa-solid fa-trash-can close"></i>
+                            <i class="fi fi-rr-trash close"></i>
                             </li>` 
         )
         $("#tarefa").val("");
