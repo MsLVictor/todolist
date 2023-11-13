@@ -10,16 +10,23 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 </head>
 <body>
+<div id="app">
+
     <header>
         <h1>Lista de Tarefas</h1>
-        <input type="text" id="tarefa" placeholder="Digite a sua tarefa...">
-        <span><i class="fas fa-plus-circle" id="btn"></i></span>
+        <input type="text" v-model id="item" placeholder="Digite a sua tarefa...">
+        <span><i class="fas fa-plus-circle" v-on:click="add"></i></span>
     </header>
-
-<ul id="lista">
-   
-</ul>
-<script src="https://code.jquery.com/jquery-3.6.4.js"></script>
-<script src="script1.js"></script>
+    
+    <ul v-for="item, index in tarefas">
+        <li>
+            <i class="fas fa-check-circle check"></i>
+            <span v-on:click="check">{{ item }}</span>
+            <i class="fi fi-rr-trash close" v-on:click="del(index)"></i>
+            </li>
+    </ul>
+</div>
+<script src="https://unpkg.com/vue@3"></script>
+<script src="vue.js"></script>
 </body>
 </html>
